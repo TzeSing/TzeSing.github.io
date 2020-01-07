@@ -20,7 +20,7 @@ tags: ["机器学习","LR"]
 但我们需要把 $$z$$ 转换为 $$0$$ 到 $$1$$ 上的值，即条件概率 
 $$
 p(y=1|x)
-$$ 
+$$
 
 
 
@@ -38,7 +38,7 @@ $$0.5$$ 是阈值，$$z>0$$ 就是正例，$$z<0$$ 就是负例
 
 如图所示，红色那条线就是单位阶跃函数
 
-![unit-step function](/assets/images/unit-step function.jpg)
+![function](/assets/images/unit-step function.jpg)
 
 
 
@@ -93,19 +93,24 @@ $$
 若把 $y$ 视为类的后验概率估计 
 $$
 p(y=1|x)
-$$ 
+$$
 则上面式子可重写为：
 $$
 ln\frac{p(y=1|x)}{p(y=0|x)}=w^Tx+b
 $$
+
+
 显然有
 $$
 p(y=1|x)=\frac{e^{w^Tx+b}}{1+e^{w^Tx+b}}
 $$
+
+
 和
 $$
 p(y=0|x)=\frac{1}{1+e^{w^Tx+b}}
 $$
+
 
 通过极大似然估计法MLE估计 $$w$$ 和 $$b$$
 
@@ -113,6 +118,8 @@ $$
 $$
 l(w,b)=\sum_{i=1}^mlnp(y_i|x_i;w,b)
 $$
+
+
 即令每个样本属于其真实标记的概率越大越好
 
 为方便记录，令 $$\beta=(w;b)$$，$$\hat x=(x;1)$$ ，则 $$w^Tx+b$$ 简写为 $$\beta\hat x$$
@@ -121,25 +128,33 @@ $$
 $$
 p_1(\hat x;\beta)=p(y=1|\hat x;\beta)
 $$
-，
+
+
+和
 $$
 p_0(\hat x;\beta)=p(y=0|\hat x;\beta)=1-p_1(\hat x;\beta)
 $$
+
 
 则似然项重写为：
 $$
 p(y_i|x_i;w,b)=y_ip_1(\hat x;\beta)+(1-y_i)p_0(\hat x;\beta)
 $$
+
+
 代回 $$l(w.b)$$ 后，最大化即最小化下式：
 $$
 l(\beta)=\sum_{i=1}^m(-y_i\beta^T\hat x_i+ln(1+e^{\beta^T\hat x_i}))
 $$
-$l(\beta)$ 是关于 $\beta$ 的高阶可导连续凸函数，根据凸优化理论，经典的数值优化算法如梯度下降法等都能求出最优解
+
+
+$$l(\beta)$$ 是关于 $$\beta$$ 的高阶可导连续凸函数，根据凸优化理论，经典的数值优化算法如梯度下降法等都能求出最优解
 $$
 \beta^*=\begin{equation}
 	\mathop{\arg\min}_{\beta} \ l(\beta)
 \end{equation}
 $$
+
 
 
 
