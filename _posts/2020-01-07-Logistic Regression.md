@@ -17,7 +17,10 @@ tags: ["机器学习","LR"]
 
 考虑二分类任务，其输出 $$y\in\{0,1\}$$ ，而线性回归模型产生的预测值 $$z=w^Tx+b$$ 是实数
 
-但我们需要把 $$z$$ 转换为 $$0$$ 到 $$1$$ 上的值，即条件概率 $$p(y=1|x)$$ 
+但我们需要把 $$z$$ 转换为 $$0$$ 到 $$1$$ 上的值，即条件概率 
+$$
+p(y=1|x)
+$$ 
 
 
 
@@ -35,7 +38,7 @@ $$0.5$$ 是阈值，$$z>0$$ 就是正例，$$z<0$$ 就是负例
 
 如图所示，红色那条线就是单位阶跃函数
 
-![unit-step function](../assets/images/unit-step function.jpg)
+![unit-step function](/assets/images/unit-step function.jpg)
 
 
 
@@ -87,7 +90,11 @@ $$
 
 ## 如何求参数 w 和 b 的值？
 
-若把 $y$ 视为类的后验概率估计 $$P(y=1|x)$$ ，则上面式子可重写为
+若把 $y$ 视为类的后验概率估计 
+$$
+p(y=1|x)
+$$ 
+则上面式子可重写为：
 $$
 ln\frac{p(y=1|x)}{p(y=0|x)}=w^Tx+b
 $$
@@ -95,7 +102,7 @@ $$
 $$
 p(y=1|x)=\frac{e^{w^Tx+b}}{1+e^{w^Tx+b}}
 $$
-
+和
 $$
 p(y=0|x)=\frac{1}{1+e^{w^Tx+b}}
 $$
@@ -110,7 +117,14 @@ $$
 
 为方便记录，令 $$\beta=(w;b)$$，$$\hat x=(x;1)$$ ，则 $$w^Tx+b$$ 简写为 $$\beta\hat x$$
 
-再令 $$p_1(\hat x;\beta)=p(y=1|\hat x;\beta)$$，$$p_0(\hat x;\beta)=p(y=0|\hat x;\beta)=1-p_1(\hat x;\beta)$$
+再令 
+$$
+p_1(\hat x;\beta)=p(y=1|\hat x;\beta)
+$$
+，
+$$
+p_0(\hat x;\beta)=p(y=0|\hat x;\beta)=1-p_1(\hat x;\beta)
+$$
 
 则似然项重写为：
 $$
