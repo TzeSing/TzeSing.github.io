@@ -72,11 +72,11 @@ $$
 
 把 $$y$$ 视为正例的概率，$$1-y$$ 视为负例的概率，两者的比值 $$\frac{y}{1-y}$$ 成为 odds，表示 $$x$$ 作为正例的相对可能性
 
-对 odds 取对数 $$ln\frac{y}{1-y}=w^Tx+b$$ ，得到 log odds，也叫 logit
+对 **odds** 取对数 $$ln\frac{y}{1-y}=w^Tx+b$$ ，得到 **log odds**，也叫 **logit**
 
 
 
-由此可以看出，实际上是用线性回归模型的预测结果去逼近真实 $$y$$ 的 log odds，因此模型就成为 logistic regression
+由此可以看出，实际上是用线性回归模型的预测结果去逼近真实 $$y$$ 的 log odds，因此模型就成为 **logistic regression**
 
 虽然叫回归，但是却是种分类方法
 
