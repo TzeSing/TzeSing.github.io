@@ -116,7 +116,7 @@ $$
 $$
 p(y_i|x_i;w,b)=y_ip_1(\hat x;\beta)+(1-y_i)p_0(\hat x;\beta)
 $$
-代回 $l(w.b)$ 后，最大化即最小化下式：
+代回 $$l(w.b)$$ 后，最大化即最小化下式：
 $$
 l(\beta)=\sum_{i=1}^m(-y_i\beta^T\hat x_i+ln(1+e^{\beta^T\hat x_i}))
 $$
